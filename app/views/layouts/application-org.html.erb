@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppTask</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    
+    <div align="right">
+      <%- if identity_signed_in? %>
+        <%= link_to 'Cerrar Sesión',  log_out_path, method: :delete  %>
+        <%- if current_identity.admin == 'S' %>
+            <%= link_to 'Crear Cuenta', sign_up_path %>
+        <%  end %>
+      <%- else %>
+        <%= link_to 'Iniciar Sesión', log_in_path %>
+      <%  end %>
+    </div>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div id="flash-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

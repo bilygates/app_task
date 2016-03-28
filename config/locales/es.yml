@@ -1,0 +1,16 @@
+es:
+  sessions:
+    new:
+      log_in: 'Iniciar'
+    create:
+      invalid_credentials: 'Tus datos son incorrectos!'
+      logged_in: 'Bienvenido!'
+    destroy:
+      logged_out: 'Nos vemos más tarde!'
+  identities:
+    new:
+      create: 'Crear'
+    create:
+      sign_up: 'Bienvenido a tu nueva cuenta!'
+
+  hello: "Hola!"
